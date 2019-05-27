@@ -1,0 +1,14 @@
+type Query {
+    books(first: Int, after: String): BookConnection @connection(for: "Book")
+}
+
+type Book {
+    id: ID!
+    name: String!
+    author: Author!
+}
+
+type Author {
+    id: ID!
+    name: String!
+}

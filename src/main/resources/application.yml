@@ -1,0 +1,7 @@
+graphql:
+  url: /graphql
+
+server:
+  port: 9001
+
+
