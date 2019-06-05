@@ -11,5 +11,6 @@ type Book {
 type Author {
     id: ID!
     name: String!
+    books(first: Int, after: String): BookConnection @connection(for: "Book")
 }
 
