@@ -1,18 +1,16 @@
 package com.example.demo.graphql.loaders
 
-import com.example.demo.graphql.types.AuthorType
 import com.example.demo.domain.author.AuthorService
+import com.example.demo.graphql.types.AuthorType
 import com.example.demo.graphql.types.ID
 import com.example.demo.graphql.types.fromGlobalId
-import com.example.demo.graphql.types.toGlobalId
 import graphql.schema.DataFetchingEnvironment
 import org.dataloader.BatchLoader
 import org.dataloader.DataLoader
 import org.slf4j.LoggerFactory
-import org.springframework.stereotype.Component
 import java.util.concurrent.CompletableFuture
 
-@Component
+@DataLoaderComponent
 class AuthorDataLoader(
         private val authorService: AuthorService
 ) : DataLoader<ID, AuthorType>(BatchLoader { keys ->

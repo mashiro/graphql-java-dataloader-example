@@ -8,6 +8,7 @@ import org.dataloader.DataLoader
 import org.dataloader.DataLoaderRegistry
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
+import org.springframework.context.annotation.Scope
 
 @Configuration
 class GraphQLConfig {
@@ -23,6 +24,7 @@ class GraphQLConfig {
     }
 
     @Bean
+    @Scope("prototype")
     fun dataLoaderRegistry(loaders: List<DataLoader<*, *>>): DataLoaderRegistry {
         return DataLoaderRegistry().also { registry ->
             loaders.forEach {

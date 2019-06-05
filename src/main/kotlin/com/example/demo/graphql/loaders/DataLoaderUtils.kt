@@ -1,6 +1,5 @@
 package com.example.demo.graphql.loaders
 
-import graphql.relay.Relay
 import graphql.schema.DataFetchingEnvironment
 import org.dataloader.DataLoader
 import kotlin.reflect.KClass
